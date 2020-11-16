@@ -10,6 +10,3 @@ header {
   align-items: center;
 
 }
-header div:last-child {
-  border: 2px solid red;
-}
