@@ -1,0 +1,37 @@
+article.tweet{
+  border: 2px solid;
+  padding: 1.5em;
+  margin: 3em 0.25em;
+  display: flex;
+  flex-direction: column;
+}
+/* hover state of a tweet */
+article.tweet:hover {
+  box-shadow: 8px 8px #a19e9e;
+}
+article.tweet header{
+display: flex;
+justify-content: space-between;
+
+}
+article.tweet header .user-id{
+  color: #a19e9e;
+  
+  }
+article.tweet p{
+  border-bottom: 2px solid;
+  padding:1em;
+  width:inherit;
+}
+article.tweet footer{
+  padding:0.25em;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  
+  
+}
+article.tweet footer span i {
+  padding: 0.25em;
+  color: #4056A1;
+}

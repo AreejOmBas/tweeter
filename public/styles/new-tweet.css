@@ -7,6 +7,7 @@ main.container section.new-tweet{
   font-style: normal;
   display: flex;
   flex-direction: column;
+  margin: 0.25em 0 1em 0;
 }
 
 #tweet-text {
