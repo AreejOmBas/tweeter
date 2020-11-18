@@ -38,7 +38,8 @@ article.tweet header .handle {
 article.tweet p {
 	border-bottom: 2px solid;
 	padding: 1em;
-	width: inherit;
+  width: inherit;
+  word-break: break-all;
 }
 article.tweet footer {
 	padding: 0.25em;
