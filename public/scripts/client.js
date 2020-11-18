@@ -34,8 +34,14 @@ $('form').submit( event => {
   event.preventDefault();
 
   if ($('#tweet-text').val().length > 140) {
+    $('#error-msg').text('ERROR: Tweet Exceed Length!!');
+       return;
+  } else if ($('#tweet-text').val().length === 0) {
+    $('#error-msg').text('ERROR: No Tweet Found!!');
     return;
   } else {
+    $('#error-msg').css('display','none');
+    
     const tweet = $('#tweet-text').val();
     $
     .ajax({
