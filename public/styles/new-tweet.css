@@ -9,7 +9,10 @@ main.container section.new-tweet{
   flex-direction: column;
   margin: 0.25em 0 1em 0;
 }
-
+.new-tweet #error-msg {
+  color:#FF0000;
+  /* display: none; */
+}
 #tweet-text {
   font-weight: 300;
   font-style: normal;
