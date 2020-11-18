@@ -30,41 +30,59 @@ $(document).ready(function () {
   //     "created_at": 1461113959088
   //   }
   // ];
-$('form').submit( event => {
-  event.preventDefault();
+  $('form').submit(event => {
+    event.preventDefault();
 
-  if ($('#tweet-text').val().length > 140) {
-    $('#error-msg').text('ERROR: Tweet Exceed Length!!');
-       return;
-  } else if ($('#tweet-text').val().length === 0) {
-    $('#error-msg').text('ERROR: No Tweet Found!!');
-    return;
-  } else {
-    $('#error-msg').css('display','none');
-    
-    const tweet = $('#tweet-text').val();
-    $
-    .ajax({
-      url: "/tweets",
-      method: "POST",
-      data: $('form').serialize()
-    })
-    .then(res => console.log(res))
-    .catch(err => console.log(err))
+    if ($('#tweet-text').val().length > 140) {
+      $('#error-msg').text('ERROR: Tweet Exceed Length!!');
+      return;
+    } else if ($('#tweet-text').val().length === 0) {
+      $('#error-msg').text('ERROR: No Tweet Found!!');
+      return;
+    } else {
+      $('#error-msg').css('display', 'none');
+
+      const tweet = $('#tweet-text').val();
+      console.log('this is the tweet ', tweet);
+      $
+        .ajax({
+          url: "/tweets",
+          type: "POST",
+          data: $('form').serialize()
+        })
+        .then((res) => submitTweet(res))
+        .catch(err => console.log(err))
     }
-  
-  
-});
 
-const loadTweets = function(){
-  $
-    .ajax('/tweets')
-    .then(tweets => {
+
+  });
+
+  const submitTweet = function () {
+    $
+      .ajax('/tweets')
+      .then(tweets => {
+        addLatestTweet(tweets);
+      })
+      .catch(err => console.log(err))
+
+  }
+  const addLatestTweet = function (tweets) {
+    const tweet = Object.values(tweets).pop()
+    const newTweetElement = createTweetElement(tweet);
+
+    $('#tweets-container').prepend(newTweetElement);
+
+  }
+
+  const loadTweets = function () {
+    $
+      .ajax('/tweets')
+      .then(tweets => {
         renderTweets(tweets);
-    })
-    .catch(err => console.log(err))
-    
-}
+      })
+      .catch(err => console.log(err))
+
+  }
 
   const renderTweets = function (tweets) {
 
@@ -74,9 +92,9 @@ const loadTweets = function(){
     }
   };
 
-  const createTweetElement = function(tweetObj) {
+  const createTweetElement = function (tweetObj) {
 
-  const $tweet = $(`
+    const $tweet = $(`
       <article class="tweet">
         <header>
           <div>
@@ -98,10 +116,10 @@ const loadTweets = function(){
        </article>
 `);
 
-  return $tweet;
-}
+    return $tweet;
+  }
 
-loadTweets();
+  loadTweets();
 
 
 });
