@@ -9,5 +9,13 @@ header.main-header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+ 
 
+}
+header.main-header h2{
+  font-weight: 300;
+  color: white;
+}
+header.main-header h2 b{
+  font-weight: 700;
 }

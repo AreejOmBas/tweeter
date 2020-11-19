@@ -3,6 +3,7 @@
 main.container section.new-tweet{
   margin:3em auto;
   font-weight: 700;
+  display: none;
 }
 
 .new-tweet form {
