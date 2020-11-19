@@ -25,14 +25,18 @@ $(document).ready(function () {
           type: "POST",
           data: $('form').serialize()
         })
-        .then((res) => submitTweet(res))
-        .catch(err => console.log(err))
+        .then((res) => {
+          $('#tweet-text').val('');
+          $('.counter').text(140)
+          submitTweet(res);  })
+        .catch(err => console.log(err));
     }
 
 
   });
 
   const submitTweet = function() {
+  
     $
       .ajax('/tweets')
       .then(tweets => {
