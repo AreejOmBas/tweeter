@@ -73,7 +73,7 @@ $(document).ready(function () {
     const username = $('<span>').addClass("user-name").text(`${tweetObj.user.name}`);
     const userHandle = $('<span>').addClass("handle").text(`${tweetObj.user.handle}`);
     const tweetContent = $('<p>').addClass("content").text(`${tweetObj.content.text}`);
-    const date = $('<span>').addClass("date-created").text(` ${tweetObj.created_at} `);
+    const date = $('<span>').addClass("date-created").text(` ${moment().startOf('hour').fromNow(tweetObj.created_at) } ago`);
     const icons = $(`<span> <i class="fas fa-flag"></i>  <i class="fas fa-retweet"></i> <i class="fas fa-heart"></i> </span>`);
     const footer = $('<footer>').append(date, icons);
     const div = $('<div>').append(userAvatar, username);
