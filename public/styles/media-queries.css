@@ -1,0 +1,24 @@
+@media only screen and (min-width: 900px) {
+  nav {
+    background-color: #4056A1;
+    background-image: none;
+  }
+  div.flex-container {
+    margin: 10em 3em 1.5em;
+    display: flex;
+    flex-direction: row;
+  }
+  header.main-header {
+    margin-top:0;
+    flex-basis:40%;
+    height: 370px;
+    border-radius: 9%;
+    margin-right:2em;
+  }
+  main.container{
+    margin:auto 8em;
+  }
+  main.container section.new-tweet{
+    margin:auto;
+  }
+}

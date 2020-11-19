@@ -3,6 +3,7 @@
 
 <head>
   <!-- Meta Information -->
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
   <title>Tweeter - Home Page</title>
 
   <!-- External CSS -->
@@ -18,6 +19,7 @@
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
   <link rel="stylesheet" href="/styles/tweet-element.css" type="text/css"/>
+  <link rel="stylesheet" href="/styles/media-queries.css" type="text/css"/>
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script
@@ -34,6 +36,7 @@
   <nav>
     <span>tweeter</span>
   </nav>
+  <div class="flex-container">
   <header class="main-header">
     <div>
       <img src="/images/profile-hex.png">
@@ -46,7 +49,6 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="new-tweet">
-      <h2>Compose Tweet</h2>
       <h4 id="error-msg"> </h4>
       <form method="POST" action="/tweets">
         <label for="tweet-text">What are you humming about?</label>
@@ -61,6 +63,7 @@
     </section>
   
   </main>
+</div>
 </body>
 
 </html>

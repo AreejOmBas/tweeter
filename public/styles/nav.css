@@ -1,12 +1,17 @@
 nav {
-  height: 120px;
-  background-color:  #4056A1;
+  height: 70px;
+  background-color: #d6a100;
+  background-image: url("https://www.transparenttextures.com/patterns/brushed-alum.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
   color: #FFFF ;
   padding: 1.5em;
   font-family: 'Bungee', cursive;
-
   overflow: hidden;
   position: fixed;
   top: 0;
   width: 100%;
+}
+nav span{
+  font-size: 2rem;
+  
 }
