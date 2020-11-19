@@ -16,7 +16,6 @@ main.container section.new-tweet{
 .new-tweet #error-msg {
   color:#FF0000;
   border: 2px solid #FF0000;
-  width: 300px;
   padding: 0.9em;
   display:none;
 }
