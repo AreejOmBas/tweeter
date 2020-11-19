@@ -1,3 +1,5 @@
+/* Styles for Tweet Form  */
+
 main.container section.new-tweet{
   margin:auto;
   font-weight: 700;
@@ -9,10 +11,15 @@ main.container section.new-tweet{
   flex-direction: column;
   margin: 0.25em 0 1em 0;
 }
+/* error message */
 .new-tweet #error-msg {
   color:#FF0000;
-  /* display: none; */
+  border: 2px solid #FF0000;
+  width: 300px;
+  padding: 0.9em;
+  display:none;
 }
+
 #tweet-text {
   font-weight: 300;
   font-style: normal;

@@ -34,13 +34,13 @@ $(document).ready(function () {
     event.preventDefault();
 
     if ($('#tweet-text').val().length > 140) {
-      $('#error-msg').text('ERROR: Tweet Exceed Length!!');
+      $('#error-msg').html('&#9940 ERROR: Tweet Exceed Length!! &#9940').slideDown( "slow");;
       return;
     } else if ($('#tweet-text').val().length === 0) {
-      $('#error-msg').text('ERROR: No Tweet Found!!');
+      $('#error-msg').html(' &#9940 ERROR: No Tweet Found!! &#9940').slideDown( "slow");
       return;
     } else {
-      $('#error-msg').css('display', 'none');
+      $('#error-msg').hide();
 
       const tweet = $('#tweet-text').val();
       console.log('this is the tweet ', tweet);
