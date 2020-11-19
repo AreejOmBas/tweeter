@@ -5,42 +5,17 @@
  */
 $(document).ready(function () {
 
-  // const data = [
-  //   {
-  //     "user": {
-  //       "name": "Newton",
-  //       "avatars": "https://i.imgur.com/73hZDYK.png"
-  //       ,
-  //       "handle": "@SirIsaac"
-  //     },
-  //     "content": {
-  //       "text": "If I have seen further it is by standing on the shoulders of giants"
-  //     },
-  //     "created_at": 1461116232227
-  //   },
-  //   {
-  //     "user": {
-  //       "name": "Descartes",
-  //       "avatars": "https://i.imgur.com/nlhLi3I.png",
-  //       "handle": "@rd"
-  //     },
-  //     "content": {
-  //       "text": "Je pense , donc je suis"
-  //     },
-  //     "created_at": 1461113959088
-  //   }
-  // ];
-  $('form').submit(event => {
+   $('form').submit(event => {
     event.preventDefault();
 
     if ($('#tweet-text').val().length > 140) {
-      $('#error-msg').html('&#9940 ERROR: Tweet Exceed Length!! &#9940').slideDown( "slow");;
+      $('#error-msg').html('&#9940 ERROR: Tweet Exceed Length!! &#9940').slideDown("slow");
       return;
     } else if ($('#tweet-text').val().length === 0) {
-      $('#error-msg').html(' &#9940 ERROR: No Tweet Found!! &#9940').slideDown( "slow");
+      $('#error-msg').html(' &#9940 ERROR: Plz enter a valid Tweet!! &#9940').slideDown("slow");
       return;
     } else {
-      $('#error-msg').hide();
+      $('#error-msg').slideUp('slow');
 
       const tweet = $('#tweet-text').val();
       console.log('this is the tweet ', tweet);
@@ -57,7 +32,7 @@ $(document).ready(function () {
 
   });
 
-  const submitTweet = function () {
+  const submitTweet = function() {
     $
       .ajax('/tweets')
       .then(tweets => {
@@ -74,7 +49,7 @@ $(document).ready(function () {
 
   }
 
-  const loadTweets = function () {
+  const loadTweets = function() {
     $
       .ajax('/tweets')
       .then(tweets => {
@@ -84,7 +59,7 @@ $(document).ready(function () {
 
   }
 
-  const renderTweets = function (tweets) {
+  const renderTweets = function(tweets) {
 
     for (let tweet of tweets) {
 
@@ -92,7 +67,7 @@ $(document).ready(function () {
     }
   };
 
-  const createTweetElement = function (tweetObj) {
+  const createTweetElement = function(tweetObj) {
 
     const userAvatar = $(`<img src="${tweetObj.user.avatars}" alt="user-avatar">`);
     const username = $('<span>').addClass("user-name").text(`${tweetObj.user.name}`);

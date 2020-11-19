@@ -8,18 +8,5 @@ $(document).ready(function () {
       $('.counter').removeClass('exceeded-length');
     }
     $('.counter').text(140 - this.value.length);
-  })
-
-
-
-
-
-
-
-
-
-
-
-
-
+  });
 });
