@@ -94,33 +94,22 @@ $(document).ready(function () {
 
   const createTweetElement = function (tweetObj) {
 
-    const $tweet = $(`
-      <article class="tweet">
-        <header>
-          <div>
-            <img src="${tweetObj.user.avatars}" alt="user-avatar">
-            <span class="user-name"> ${tweetObj.user.name}</span> 
-           </div>
-          <span class="handle">${tweetObj.user.handle}</span>
-        </header>
-        <p class= "content"> ${tweetObj.content.text} </p>
+    const userAvatar = $(`<img src="${tweetObj.user.avatars}" alt="user-avatar">`);
+    const username = $('<span>').addClass("user-name").text(`${tweetObj.user.name}`);
+    const userHandle = $('<span>').addClass("handle").text(`${tweetObj.user.handle}`);
+    const tweetContent = $('<p>').addClass("content").text(`${tweetObj.content.text}`);
+    const date = $('<span>').addClass("date-created").text(` ${tweetObj.created_at} `);
+    const icons = $(`<span> <i class="fas fa-flag"></i>  <i class="fas fa-retweet"></i> <i class="fas fa-heart"></i> </span>`);
+    const footer = $('<footer>').append(date, icons);
+    const div = $('<div>').append(userAvatar, username);
+    const header = $('<header>').append(div, userHandle);
+    const article = $('<article>').addClass('tweet').append(header, tweetContent, footer);
 
-        <footer> 
-          <span class="date-created">  ${tweetObj.created_at} </span>
-             <span>
-                <i class="fas fa-flag"></i>
-                <i class="fas fa-retweet"></i>
-                <i class="fas fa-heart"></i>
-              </span>
-        </footer>
-       </article>
-`);
+    return article;
 
-    return $tweet;
   }
 
   loadTweets();
 
 
 });
-
