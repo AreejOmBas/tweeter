@@ -1,3 +1,5 @@
+
+/* For screen width 900px and above  */
 @media only screen and (min-width: 900px) {
   nav {
     background-color: #4056A1;
@@ -22,3 +24,16 @@
     margin:auto;
   }
 }
+@media only screen and (max-width: 525px) {
+
+  nav {
+    padding: 2.5em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  nav #compose-tweet-btn {
+    margin-top: .5em;
+  }
+}
+
