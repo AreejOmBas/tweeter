@@ -1,3 +1,5 @@
+/* Script for adding effects to the counter of the tweet characters */
+
 $(document).ready(function () {
 
   // Update the char limit counter as user types

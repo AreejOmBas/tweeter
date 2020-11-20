@@ -1,21 +1,23 @@
+
+/* Header elements styles , ordered according to elements order in index.html*/
 header.main-header {
   margin-top: 70px;
   height: 400px;
   width:100%;
   background-color: #d6a100;
-  background-image: url("https://www.transparenttextures.com/patterns/brushed-alum.png");
+  background-image: url('https://www.transparenttextures.com/patterns/brushed-alum.png');
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
- 
-
 }
+/* User Name */
 header.main-header h2{
   font-weight: 300;
   color: white;
 }
+/* had to add this to overwrite some rule in normalize.css */
 header.main-header h2 b{
   font-weight: 700;
 }
